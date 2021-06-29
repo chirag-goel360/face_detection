@@ -139,9 +139,20 @@ class _MyHomePageState extends State<MyHomePage> {
                                 )
                               : Container(
                                   color: Colors.black,
-                                  child: Icon(
-                                    Icons.camera_alt,
-                                    color: Colors.white,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(
+                                        Icons.camera_alt,
+                                        color: Colors.white,
+                                      ),
+                                      Text(
+                                        'Press for Gallery',
+                                      ),
+                                      Text(
+                                        'Long Press for Camera'
+                                      ),
+                                    ],
                                   ),
                                 ),
                         ),
@@ -190,7 +201,7 @@ class FacePainter extends CustomPainter {
     Paint paint = Paint();
     paint.color = Colors.red;
     paint.style = PaintingStyle.stroke;
-    paint.strokeWidth = 16;
+    paint.strokeWidth = 12;
     if (rect != null) {
       for (Face rectangle in rect) {
         canvas.drawRect(
